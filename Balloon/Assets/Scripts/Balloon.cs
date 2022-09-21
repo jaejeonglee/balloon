@@ -21,6 +21,8 @@ public class Balloon : MonoBehaviour
         if (coll.gameObject.tag == "Square")
         {
             Debug.Log("터진다!");
+            gameManager.I.Stop();
+            Destroy(gameObject);
         }
     }
 }

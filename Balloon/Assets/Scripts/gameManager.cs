@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
 
     public GameObject Square;
+    public Text TimeText;
+    public Text EndText;
 
     public static gameManager I;
+
+    float time = 0.00f;
 
     void Awake()
     {
@@ -23,7 +28,14 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
+        TimeText.text = time.ToString("N2");
+    }
+
+    public void Stop()
+    {
+        Time.timeScale = 0.00f;
+        EndText.gameObject.SetActive(true);
     }
 
     void FallingSquare()
