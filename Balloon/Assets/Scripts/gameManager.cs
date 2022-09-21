@@ -7,6 +7,13 @@ public class gameManager : MonoBehaviour
 
     public GameObject Square;
 
+    public static gameManager I;
+
+    void Awake()
+    {
+        I = this;   
+    }
+
     // Start is called before the first frame update
     void Start()
     {
