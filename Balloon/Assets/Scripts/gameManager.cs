@@ -10,6 +10,9 @@ public class gameManager : MonoBehaviour
     public Text TimeText;
     public Text EndText;
 
+    public Animator anim;
+    public GameObject Balloon;
+
     public static gameManager I;
 
     float time = 0.00f;
@@ -34,12 +37,19 @@ public class gameManager : MonoBehaviour
 
     public void Stop()
     {
-        Time.timeScale = 0.00f;
+        anim.SetBool("isDie", true);
         EndText.gameObject.SetActive(true);
+        Invoke("dead", 0.5f) ;
     }
 
     void FallingSquare()
     {
         Instantiate(Square);//복제  
+    }
+
+    void dead()
+    {
+        Time.timeScale = 0.00f;
+        Destroy(Balloon);
     }
 }
