@@ -41,19 +41,22 @@ public class Square : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.y < -6)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //collider 이벤트
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Circle")
-        {
-            Debug.Log("동그라미!");
-        }
-        if (coll.gameObject.tag == "Balloon")
-        {
-            Debug.Log("풍선!");
-        }
-    }
+    //void OnCollisionEnter2D(Collision2D coll)
+    //{
+    //    if (coll.gameObject.tag == "Circle")
+    //    {
+    //        Debug.Log("동그라미!");
+    //    }
+    //    if (coll.gameObject.tag == "Balloon")
+    //    {
+    //        Debug.Log("풍선!");
+    //    }
+    //}
 }

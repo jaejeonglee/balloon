@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Balloon : MonoBehaviour
 {
+    float time;
+    public float _fadeTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +23,8 @@ public class Balloon : MonoBehaviour
     {
         if (coll.gameObject.tag == "Square")
         {
-            Debug.Log("터진다!");
+            //Debug.Log("터진다!");
             gameManager.I.Stop();
-            Destroy(gameObject);
         }
     }
 }
